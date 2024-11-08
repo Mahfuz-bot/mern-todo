@@ -14,7 +14,7 @@ function List({
    isEditing: string
    setIsEditing: React.Dispatch<React.SetStateAction<string>>
 }) {
-   const url = import.meta.env.VITE_API_URL || "http://localhost:3000"
+   const url = import.meta.env.VITE_API_URL
    const dispatch = useContext(TaskDispatchContext)
    const [inputValue, setInputValue] = useState(item.title)
 

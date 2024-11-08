@@ -6,7 +6,7 @@ import axios from "axios"
 export function TaskProvider({ children }: { children: React.ReactNode }) {
    const [todoData, dispatch] = useReducer(taskReducer, [])
 
-   const url = import.meta.env.VITE_API_URL || "http://localhost:3000"
+   const url = import.meta.env.VITE_API_URL
    useEffect(() => {
       const fetchTodos = async () => {
          try {
