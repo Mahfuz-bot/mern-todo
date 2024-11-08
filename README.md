@@ -14,6 +14,6 @@ A simple Todo App built with React, allowing users to add, edit, and delete task
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/Mahfuz-bot/todo-app.git
+   git clone https://github.com/Mahfuz-bot/mern-todo-server.git
    cd todo-app
    ```
