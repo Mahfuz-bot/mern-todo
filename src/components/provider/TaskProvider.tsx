@@ -6,7 +6,7 @@ import axios from "axios"
 export function TaskProvider({ children }: { children: React.ReactNode }) {
    const [todoData, dispatch] = useReducer(taskReducer, [])
 
-   const url = "todo-backend.up.railway.app"
+   const url = "https://todo-backend.up.railway.app"
    useEffect(() => {
       const fetchTodos = async () => {
          try {
