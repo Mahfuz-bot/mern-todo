@@ -16,7 +16,7 @@ export const getTodos = async () => {
       console.log(error)
    }
 }
-export const dataSet = await getTodos()
+export const dataSet = getTodos()
 
 // export const dataSet: Data[] = [
 //    {
