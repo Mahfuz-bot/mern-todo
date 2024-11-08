@@ -6,14 +6,16 @@ import axios from "axios"
 export function TaskProvider({ children }: { children: React.ReactNode }) {
    const [todoData, dispatch] = useReducer(taskReducer, [])
 
+   const url = import.meta.env.VITE_API_URL || "http://localhost:3000"
    useEffect(() => {
       const fetchTodos = async () => {
          try {
-            const response = await axios.get(
-               "http://localhost:3000/api/get-todos"
-            )
+            const response = await axios.get(`${url}/api/get-todos`)
 
-            dispatch({ type: "set_initial_data", payload: response.data.data })
+            dispatch({
+               type: "set_initial_data",
+               payload: response.data.data,
+            })
          } catch (error) {
             console.error("Error fetching todos:", error)
          }

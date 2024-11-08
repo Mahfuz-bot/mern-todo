@@ -14,11 +14,12 @@ function List({
    isEditing: string
    setIsEditing: React.Dispatch<React.SetStateAction<string>>
 }) {
+   const url = import.meta.env.VITE_API_URL || "http://localhost:3000"
    const dispatch = useContext(TaskDispatchContext)
    const [inputValue, setInputValue] = useState(item.title)
 
    const handleDelete = async (passedId: string) => {
-      await axios.delete(`http://localhost:3000/api/delete-todo/${passedId}`)
+      await axios.delete(`${url}/api/delete-todo/${passedId}`)
       dispatch({
          type: "delete",
          payload: {
@@ -28,7 +29,7 @@ function List({
    }
 
    const handleChecked = async (passedId: string) => {
-      await axios.put(`http://localhost:3000/api/update-todo/${passedId}`, {
+      await axios.put(`${url}/api/update-todo/${passedId}`, {
          isCompleted: !item.isCompleted,
       })
       dispatch({
@@ -43,7 +44,7 @@ function List({
    const handleUpdate = async (passedId?: string) => {
       try {
          const response = await axios.put(
-            `http://localhost:3000/api/update-todo/${passedId}`,
+            `${url}/api/update-todo/${passedId}`,
             {
                title: inputValue,
                isCompleted: item.isCompleted,
