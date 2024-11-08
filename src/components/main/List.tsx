@@ -40,10 +40,7 @@ function List({
       })
    }
 
-   const handleUpdate = async (
-      passedId?: string,
-      e?: React.ChangeEvent<HTMLInputElement>
-   ) => {
+   const handleUpdate = async (passedId?: string) => {
       try {
          const response = await axios.put(
             `http://localhost:3000/api/update-todo/${passedId}`,
