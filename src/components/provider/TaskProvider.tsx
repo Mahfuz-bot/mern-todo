@@ -6,11 +6,13 @@ import axios from "axios"
 export function TaskProvider({ children }: { children: React.ReactNode }) {
    const [todoData, dispatch] = useReducer(taskReducer, [])
 
-   const url = "https://todo-backend.up.railway.app"
+   // const url = "https://todo-backend.up.railway.app"
    useEffect(() => {
       const fetchTodos = async () => {
          try {
-            const response = await axios.get(`${url}/api/get-todos`)
+            const response = await axios.get(
+               `https://todo-backend.up.railway.app/api/get-todos`
+            )
 
             dispatch({
                type: "set_initial_data",

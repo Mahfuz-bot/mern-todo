@@ -7,12 +7,12 @@ function AddTodoForm() {
 
    const dispatch = useContext(TaskDispatchContext)
 
-   const url = "https://todo-backend.up.railway.app"
+   // const url = "https://todo-backend.up.railway.app"
 
    const handleAdd = async (e: React.FormEvent) => {
       e.preventDefault()
       if (text) {
-         await axios.post(`${url}/api/add-todo`, {
+         await axios.post(`https://todo-backend.up.railway.app/api/add-todo`, {
             title: text,
          })
          dispatch({

@@ -14,13 +14,15 @@ function List({
    isEditing: string
    setIsEditing: React.Dispatch<React.SetStateAction<string>>
 }) {
-   const url = "https://todo-backend.up.railway.app"
+   // const url = "https://todo-backend.up.railway.app"
 
    const dispatch = useContext(TaskDispatchContext)
    const [inputValue, setInputValue] = useState(item.title)
 
    const handleDelete = async (passedId: string) => {
-      await axios.delete(`${url}/api/delete-todo/${passedId}`)
+      await axios.delete(
+         `https://todo-backend.up.railway.app/api/delete-todo/${passedId}`
+      )
       dispatch({
          type: "delete",
          payload: {
@@ -30,9 +32,12 @@ function List({
    }
 
    const handleChecked = async (passedId: string) => {
-      await axios.put(`${url}/api/update-todo/${passedId}`, {
-         isCompleted: !item.isCompleted,
-      })
+      await axios.put(
+         `https://todo-backend.up.railway.app/api/update-todo/${passedId}`,
+         {
+            isCompleted: !item.isCompleted,
+         }
+      )
       dispatch({
          type: "update",
          payload: {
@@ -45,7 +50,7 @@ function List({
    const handleUpdate = async (passedId?: string) => {
       try {
          const response = await axios.put(
-            `${url}/api/update-todo/${passedId}`,
+            `https://todo-backend.up.railway.app/api/update-todo/${passedId}`,
             {
                title: inputValue,
                isCompleted: item.isCompleted,
