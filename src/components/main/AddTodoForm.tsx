@@ -7,7 +7,7 @@ function AddTodoForm() {
 
    const dispatch = useContext(TaskDispatchContext)
 
-   const url = import.meta.env.VITE_API_URL
+   const url = "todo-backend.up.railway.app"
 
    const handleAdd = async (e: React.FormEvent) => {
       e.preventDefault()
