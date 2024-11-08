@@ -7,10 +7,12 @@ function AddTodoForm() {
 
    const dispatch = useContext(TaskDispatchContext)
 
+   const url = import.meta.env.VITE_API_URL
+
    const handleAdd = async (e: React.FormEvent) => {
       e.preventDefault()
       if (text) {
-         await axios.post("http://localhost:3000/api/add-todo", {
+         await axios.post(`${url}/api/add-todo`, {
             title: text,
          })
          dispatch({
