@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (min-height: 600px) {
+   h1 {
+      top: 2%;
+   }
+}
+
+@layer components {
+   .main {
+      @apply self-center shadow-[0_4px_4px_rgba(0,0,0,0.08)] rounded-lg relative w-[972px] h-[550px] bg-white grid grid-cols-[7fr_4fr] grid-rows-[50px_1fr] overflow-hidden;
+   }
+   .todoList {
+      @apply flex justify-between  items-center px-6 h-[50px] text-[14px] border-b cursor-pointer;
+   }
+   .btn {
+      @apply h-[45px] bg-blue-500 text-white w-full rounded-md cursor-pointer hover:bg-blue-900;
+   }
+}
