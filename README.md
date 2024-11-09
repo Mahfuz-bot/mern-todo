@@ -7,6 +7,8 @@ A simple Todo App built with React, allowing users to add, edit, and delete task
 -  Add new todos
 -  Edit existing todos
 -  Delete todos
+-  All data is been saved on MongoDB
+-  Authentication is still on working progress
 
 ## LIVE LINK
 
