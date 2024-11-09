@@ -13,6 +13,7 @@ export function TaskProvider({ children }: { children: React.ReactNode }) {
             const response = await axios.get(
                `https://todo-backend.up.railway.app/api/get-todos`
             )
+            console.log("fetching todos", response.data.data)
 
             dispatch({
                type: "set_initial_data",
@@ -25,6 +26,9 @@ export function TaskProvider({ children }: { children: React.ReactNode }) {
 
       fetchTodos()
    }, [])
+
+   console.log("todoData", todoData)
+
    return (
       <TaskContext.Provider value={todoData}>
          <TaskDispatchContext.Provider value={dispatch}>
