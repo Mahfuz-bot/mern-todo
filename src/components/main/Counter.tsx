@@ -4,6 +4,7 @@ import { Data } from "../../assets/data/datas"
 
 function Counter() {
    const todos = useContext(TaskContext) as Data[]
+   console.log(todos)
    return (
       <p>
          <strong>
