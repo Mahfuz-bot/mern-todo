@@ -13,11 +13,14 @@ export function TaskProvider({ children }: { children: React.ReactNode }) {
             const response = await axios.get(
                `https://todo-backend.up.railway.app/api/get-todos`
             )
+            console.log("Full response:", response)
             console.log("fetching todos", response.data.data)
 
             dispatch({
                type: "set_initial_data",
-               payload: response.data.data,
+               payload: Array.isArray(response.data.data)
+                  ? response.data.data
+                  : [],
             })
          } catch (error) {
             console.error("Error fetching todos:", error)
@@ -42,7 +45,7 @@ export function TaskProvider({ children }: { children: React.ReactNode }) {
 function taskReducer(state: Data[], action: any) {
    switch (action.type) {
       case "set_initial_data": {
-         return action.payload
+         return action.payload || []
       }
       case "add_task": {
          if (action.payload && action.payload.title) {
