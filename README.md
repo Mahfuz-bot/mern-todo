@@ -7,7 +7,10 @@ A simple Todo App built with React, allowing users to add, edit, and delete task
 -  Add new todos
 -  Edit existing todos
 -  Delete todos
--  Gradual rendering of todo items with a delay effect
+
+## LIVE LINK
+
+-  [CLICK_ME](https://mern-todo-ruddy.vercel.app)
 
 ## Installation
 

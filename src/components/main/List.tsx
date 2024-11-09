@@ -56,8 +56,8 @@ function List({
                isCompleted: item.isCompleted,
             }
          )
-         console.log(inputValue)
-         console.log(response.data)
+         console.log(response)
+         // console.log(response.data)
          dispatch({
             type: "update",
             payload: {
