@@ -3,6 +3,7 @@ import { TaskContext } from "../../context/context"
 import { Data } from "../../assets/data/datas"
 
 function Counter() {
+   console.log("i am from counter com")
    const todos = useContext(TaskContext) as Data[]
    console.log(todos)
    return (

@@ -25,6 +25,7 @@ function AddTodoForm() {
       }
    }
 
+   console.log("i am from add todo form")
    return (
       <form className="row-[1/2]" onSubmit={handleAdd}>
          <h2 className="font-medium text-center text-[#231d15]">Add Todo</h2>
