@@ -5,6 +5,7 @@ import { TaskProvider } from "./provider/TaskProvider"
 
 function Main() {
    // const [todos, setTodos] = useState(dataSet)
+   console.log("i am from main")
 
    return (
       <main className="main">
