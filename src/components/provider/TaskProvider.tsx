@@ -28,7 +28,7 @@ export function TaskProvider({ children }: { children: React.ReactNode }) {
       }
 
       fetchTodos()
-   }, [])
+   }, [dispatch])
 
    console.log("todoData", todoData)
 
